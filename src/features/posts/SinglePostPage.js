@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import { PostAuthor } from './PostAuthor'
 import { TimeAgo } from './TimeAgo'
 import { ReactionButtons } from './ReactionButtons'
+import { AddCommentForm } from './AddCommentForm'
+import { CommentsList } from './CommentsList'
 
 export const SinglePostPage = ({ match }) => {
   const { postId } = match.params
@@ -27,9 +29,11 @@ export const SinglePostPage = ({ match }) => {
         <TimeAgo timestamp={post.date} />
         <p>{post.content}</p>
         <ReactionButtons post={post} />
-        <Link to={`/editPost/${post.id}`} className="button">
+        <Link to={`/editPost/${post.id}`}>
           Edit Post
         </Link>
+        <AddCommentForm postId={post.id} />
+        <CommentsList post={post.id} />
       </article>
     </section>
   )

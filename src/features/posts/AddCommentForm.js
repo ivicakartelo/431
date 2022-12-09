@@ -1,22 +1,24 @@
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { commentAdded } from './commentsSlice'
-//import { postAdded } from './postsSlice'
+import { commentAdded } from '../comments/commentsSlice'
 
-  export const AddCommentForm = () => {
+  export const AddCommentForm = ({postId}) => {
+  
   const [rating, setRating] = useState('')
   const [author, setAuthor] = useState('')
   const [comment, setComment] = useState('')
-
+  
+  
+  
   const dispatch = useDispatch()
 
   const onRatingChanged = e => setRating(e.target.value) 
   const onAuthorChanged = e => setAuthor(e.target.value)
   const onCommentChanged = e => setComment(e.target.value)
-
+ 
   const onSaveCommentClicked = () => {
-    if (rating && author && comment) {
-      dispatch(commentAdded(rating, author, comment))
+    if (postId && rating && author && comment) {
+      dispatch(commentAdded( postId, rating, author, comment))
       setRating('')
       setAuthor('')
       setComment('')
@@ -24,12 +26,12 @@ import { commentAdded } from './commentsSlice'
   }
   
   const canSave = Boolean(rating) && Boolean(author) && Boolean(comment)
-
+  
   return (
     <section>
       <h2>Add a New Comment</h2>
       <form>
-        <label htmlFor="commentRating">Comment Rating:</label>
+        <label>Comment Rating:</label>
         
         <input
           type="text"
@@ -39,7 +41,7 @@ import { commentAdded } from './commentsSlice'
           onChange={onRatingChanged}
         />
 
-        <label htmlFor="commentAuthor">Author:</label>
+        <label>Author:</label>
         
         <input
           type="text"
@@ -49,13 +51,14 @@ import { commentAdded } from './commentsSlice'
           onChange={onAuthorChanged}
         />
         
-        <label htmlFor="commentText"><p>Comment Text</p></label>
+        <label>Comment Text</label>
         <textarea
           id="commenttext"
           name="commenttext"
           value={comment}
           onChange={onCommentChanged}
         />
+
         <button type="button" onClick={onSaveCommentClicked} disabled={!canSave}>
             Save Comment
         </button>

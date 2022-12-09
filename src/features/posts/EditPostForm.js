@@ -32,7 +32,7 @@ export const EditPostForm = ({ match }) => {
     <section>
       <h2>Edit Post</h2>
       <form>
-        <label htmlFor="postTitle">Post Title:</label>
+        <label>Post Title:</label>
         <input
           type="text"
           id="postTitle"
