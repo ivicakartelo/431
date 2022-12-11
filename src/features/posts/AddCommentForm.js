@@ -17,7 +17,7 @@ import { commentAdded } from '../comments/commentsSlice'
   const onCommentChanged = e => setComment(e.target.value)
  
   const onSaveCommentClicked = () => {
-    if (postId && rating && author && comment) {
+    if (rating && author && comment) {
       dispatch(commentAdded( postId, rating, author, comment))
       setRating('')
       setAuthor('')
@@ -30,6 +30,7 @@ import { commentAdded } from '../comments/commentsSlice'
   return (
     <section>
       <h2>Add a New Comment</h2>
+      
       <form>
         <label>Comment Rating:</label>
         

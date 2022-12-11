@@ -5,7 +5,11 @@ export const CommentsList = ({ post }) => {
   .filter(comment => comment.post === post)  
   .map(comment => (
     <article key={comment.commentId}>
+      <h1>{comment.date}</h1>
+      <h3>{comment.rating}</h3>
       <h3>{comment.author}</h3>
+      <p>{comment.comment}</p>
+      
     </article>
   ))
 return (

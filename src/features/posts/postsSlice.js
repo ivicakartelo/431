@@ -3,7 +3,7 @@ import { sub } from 'date-fns'
 
 const initialState = [
   {
-    id: '1',
+    id: '0',
     title: 'First Post!',
     content: 'Hello!',
     user: '0',
@@ -18,7 +18,7 @@ const initialState = [
     },
   },
   {
-    id: '2',
+    id: '1',
     title: 'Second Post',
     content: 'More text',
     user: '2',
