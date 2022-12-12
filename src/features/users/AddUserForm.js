@@ -1,13 +1,11 @@
 import { useState } from 'react'
-import { useDispatch,  useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { userAdded } from './usersSlice'
 
   export const AddUserForm = () => {
   const [username, setUserName] = useState('')
 
   const dispatch = useDispatch()
-
-  const users = useSelector(state => state.users)
 
   const onUserChanged = e => setUserName(e.target.value) 
 
@@ -33,7 +31,7 @@ import { userAdded } from './usersSlice'
           onChange={onUserChanged}
         />
         <button type="button" onClick={onSaveUserClicked} disabled={!canSave}>
-            Save Post
+            Save User
         </button>
       </form>
     </section>

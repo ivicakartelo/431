@@ -8,8 +8,6 @@ import { commentAdded } from '../comments/commentsSlice'
   const [author, setAuthor] = useState('')
   const [comment, setComment] = useState('')
   
-  
-  
   const dispatch = useDispatch()
 
   const onRatingChanged = e => setRating(e.target.value) 
