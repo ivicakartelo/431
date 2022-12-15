@@ -1,4 +1,6 @@
 import { useSelector } from 'react-redux'
+import { AddReplyForm } from './AddReplyForm'
+import { RepliesList } from './RepliesList'
 
 export const CommentsList = ({ post }) => {
   const comments = useSelector(state => state.comments)
@@ -9,7 +11,10 @@ export const CommentsList = ({ post }) => {
       <h3>{comment.rating}</h3>
       <h3>{comment.author}</h3>
       <p>{comment.comment}</p>
-      
+      <div style={{ marginLeft: '50px', paddingBottom: '1rem' }}>
+      <AddReplyForm commentId={comment.commentId} />
+      <RepliesList commentId={comment.commentId} />
+      </div>
     </article>
   ))
 return (
