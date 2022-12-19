@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit'
-import counter1Reducer from '../features/counter1yy/counter1Slice'
+import counter1Reducer from '../features/counter1/counter1Slice'
 import counterReducer from '../features/counter/counterSlice'
 import postsReducer from '../features/posts/postsSlice'
 import usersReducer from '../features/users/usersSlice'
