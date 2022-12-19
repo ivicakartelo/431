@@ -1,3 +1,5 @@
+import { Counter1 } from './features/counter1/Counter1'
+import { Counter } from './features/counter/Counter'
 import { AddPostForm } from './features/posts/AddPostForm'
 import { PostsList } from './features/posts/PostsList'
 import { AddUserForm } from './features/users/AddUserForm'
@@ -23,6 +25,8 @@ function App() {
             path="/"
             render={() => (
               <>
+                <Counter1 />
+                <Counter />
                 <AddPostForm />
                 <PostsList />
               </>
