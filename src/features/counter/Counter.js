@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { incrementByAmount, selectCount } from './counterSlice';
+import { incrementByAmount } from './counterSlice';
 
-export function Counter() {
-  const count = useSelector(selectCount);
+export const Counter = () => {
+  const count = useSelector((state) => state.counter.value);
   const dispatch = useDispatch();
   const [incrementAmount, setIncrementAmount] = useState('2');
   const incrementValue = Number(incrementAmount) || 0;
- 
-  console.log(incrementAmount)
 
   return (
     <div>

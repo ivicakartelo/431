@@ -7,8 +7,6 @@ import { postAdded } from './postsSlice'
   const [content, setContent] = useState('')
   const [userId, setUserId] = useState('')
 
-  console.log(title)
-
   const dispatch = useDispatch()
 
   const users = useSelector(state => state.users)
@@ -18,10 +16,11 @@ import { postAdded } from './postsSlice'
   const onAuthorChanged = e => setUserId(e.target.value)
 
   const onSavePostClicked = () => {
-    if (title && content) {
+    if (title && content && userId) {
       dispatch(postAdded(title, content, userId))
       setTitle('')
       setContent('')
+      setUserId('')
     }
   }
   

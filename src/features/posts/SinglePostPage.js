@@ -32,6 +32,7 @@ export const SinglePostPage = ({ match }) => {
         <Link to={`/editPost/${post.id}`}>
           Edit Post
         </Link>
+        
         <AddCommentForm postId={post.id} />
         <CommentsList post={post.id} />
       </article>

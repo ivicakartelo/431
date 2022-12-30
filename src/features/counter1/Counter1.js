@@ -1,8 +1,8 @@
 import { useSelector, useDispatch } from 'react-redux';
-import {increment, decrement, selectCount } from './counter1Slice';
+import {increment, decrement } from './counter1Slice';
 
-export function Counter1() {
-  const count = useSelector(selectCount);
+export const Counter1 = () => {
+  const count = useSelector((state) => state.counter1.value);
   const dispatch = useDispatch();
 
   return (
