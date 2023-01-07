@@ -63,7 +63,11 @@ const postsSlice = createSlice({
       },
     },
     reactionAdded(state, action) {
-      state.push(action.payload)
+      const { postId, reaction } = action.payload
+      const existingPost = state.find((post) => post.id === postId)
+      if (existingPost) {
+        existingPost.reactions[reaction]++
+      }
     },
     postUpdated(state, action) {
       const { id, title, content } = action.payload
