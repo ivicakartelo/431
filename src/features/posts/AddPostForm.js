@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useDispatch,  useSelector } from 'react-redux'
 import { postAdded } from './postsSlice'
 
-  export const AddPostForm = () => {
+  const AddPostForm = () => {
   const [title, setTitle] = useState('')
   const [content, setContent] = useState('')
   const [userId, setUserId] = useState('')
@@ -61,3 +61,4 @@ import { postAdded } from './postsSlice'
     </section>
   )
 }
+export default AddPostForm
